@@ -99,14 +99,26 @@ class WeatherService {
 
     // If dateRange is provided, filter forecast to only include dates in range
     let filteredForecast = forecast;
+    let dateRangeInfo = null;
+    
     if (dateRange && dateRange.startDate && dateRange.endDate) {
       const startDate = new Date(dateRange.startDate);
       const endDate = new Date(dateRange.endDate);
+      
+      // Calculate how many days in the range
+      const daysDifference = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24)) + 1;
       
       filteredForecast = forecast.filter(day => {
         const forecastDate = new Date(day.date);
         return forecastDate >= startDate && forecastDate <= endDate;
       });
+
+      dateRangeInfo = {
+        requestedDays: daysDifference,
+        availableDays: filteredForecast.length,
+        startDate: startDate.toISOString().split('T')[0],
+        endDate: endDate.toISOString().split('T')[0]
+      };
 
       // If no forecast data matches the date range, still include original forecast
       if (filteredForecast.length === 0) {
@@ -117,6 +129,7 @@ class WeatherService {
     return {
       current,
       forecast: filteredForecast,
+      dateRangeInfo,
       location: {
         city: current.city,
         country: current.country,

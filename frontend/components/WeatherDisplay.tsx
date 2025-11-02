@@ -128,7 +128,8 @@ export default function WeatherDisplay({ weatherData, location, onRecordSaved }:
         <div className="mt-6 p-4 bg-gray-50 rounded-lg">
           <h3 className="font-bold text-gray-800 mb-2">Save This Weather Record</h3>
           <p className="text-sm text-gray-600 mb-3">
-            Select a date range within the next 5 days to save forecast data for those specific dates.
+            ⚠️ <strong>Important:</strong> The free weather API only provides forecast data for the next 5 days from today.
+            You can select any date range, but weather data will only be available for dates within the next 5 days.
           </p>
           <div className="flex gap-4 items-end">
             <div className="flex-1">

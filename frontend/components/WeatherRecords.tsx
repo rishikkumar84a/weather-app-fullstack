@@ -177,7 +177,7 @@ export default function WeatherRecords({ refreshTrigger }: WeatherRecordsProps) 
                   </div>
 
                   {/* Display Forecast Data for Date Range */}
-                  {record.weatherData.forecast && record.weatherData.forecast.length > 0 && (
+                  {record.weatherData.forecast && record.weatherData.forecast.length > 0 ? (
                     <div className="mt-4">
                       <h4 className="text-sm font-semibold text-gray-700 mb-2">
                         Forecast for Selected Date Range ({record.weatherData.forecast.length} days)
@@ -199,6 +199,13 @@ export default function WeatherRecords({ refreshTrigger }: WeatherRecordsProps) 
                           </div>
                         ))}
                       </div>
+                    </div>
+                  ) : (
+                    <div className="mt-4 p-3 bg-yellow-50 border border-yellow-200 rounded">
+                      <p className="text-sm text-yellow-800">
+                        ⚠️ No forecast data available for the selected date range.
+                        The weather API only provides forecast for the next 5 days from when the record was saved.
+                      </p>
                     </div>
                   )}
 
