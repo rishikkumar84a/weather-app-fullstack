@@ -32,20 +32,32 @@ app.use((err, req, res, next) => {
 
 // Database connection and server start
 const PORT = process.env.PORT || 5000;
+const fs = require('fs');
 
-// Test PostgreSQL connection
-pool.query('SELECT NOW()', (err, res) => {
-  if (err) {
+// Initialize database and start server
+async function initializeDatabase() {
+  try {
+    // Test connection
+    await pool.query('SELECT NOW()');
+    console.log('✅ Connected to PostgreSQL database');
+    
+    // Create tables if they don't exist
+    const schemaPath = path.join(__dirname, 'db', 'schema.sql');
+    const schema = fs.readFileSync(schemaPath, 'utf8');
+    await pool.query(schema);
+    console.log('✅ Database schema initialized');
+    
+    // Start server
+    app.listen(PORT, () => {
+      console.log(`🚀 Server running on port ${PORT}`);
+      console.log(`📍 API endpoints available at http://localhost:${PORT}/api/weather`);
+    });
+  } catch (err) {
     console.error('❌ PostgreSQL connection error:', err);
     process.exit(1);
   }
-  
-  console.log('✅ Connected to PostgreSQL database');
-  
-  app.listen(PORT, () => {
-    console.log(`🚀 Server running on port ${PORT}`);
-    console.log(`📍 API endpoints available at http://localhost:${PORT}/api/weather`);
-  });
-});
+}
+
+initializeDatabase();
 
 module.exports = app;
