@@ -8,6 +8,8 @@
 
 **Live App:** [https://weather-app-fullstack-seven.vercel.app/](https://weather-app-fullstack-seven.vercel.app/)
 
+**Backend API:** [https://weather-app-fullstack-1az2.onrender.com](https://weather-app-fullstack-1az2.onrender.com)
+
 ---
 
 ## 📽️ Demo Video & Live Link
@@ -165,21 +167,21 @@ npm install
 Create a `.env` file in the root directory:
 
 ```env
-MONGODB_URI=mongodb://localhost:27017/weather-app
+DATABASE_URL=postgresql://username:password@localhost:5432/weather_app
 PORT=5001
 
-WEATHER_API_KEY=8cc42f1330fb03e5b46d090b5266673f
-GOOGLE_MAPS_API_KEY=AIzaSyDmWOLADTf9v6M6nKyCGAtN0BeAbfTxUO4
-YOUTUBE_API_KEY=AIzaSyAMAZ2DZxdyPOu-steqOa_3r9PRB8nw0yY
+WEATHER_API_KEY=your_openweathermap_api_key_here
+GOOGLE_MAPS_API_KEY=your_google_maps_api_key_here
+YOUTUBE_API_KEY=your_youtube_api_key_here
 ```
 
 Create a `.env.local` file in the `frontend` directory:
 
 ```env
 NEXT_PUBLIC_API_URL=http://localhost:5001/api
-NEXT_PUBLIC_WEATHER_API_KEY=8cc42f1330fb03e5b46d090b5266673f
-NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=AIzaSyDmWOLADTf9v6M6nKyCGAtN0BeAbfTxUO4
-NEXT_PUBLIC_YOUTUBE_API_KEY=AIzaSyAMAZ2DZxdyPOu-steqOa_3r9PRB8nw0yY
+NEXT_PUBLIC_WEATHER_API_KEY=your_openweathermap_api_key_here
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_google_maps_api_key_here
+NEXT_PUBLIC_YOUTUBE_API_KEY=your_youtube_api_key_here
 ```
 
 4. **Start MongoDB**
@@ -457,9 +459,9 @@ This project is created for the PMA Bootcamp Technical Assessment.
 
 **Rishik Kumar Chaurasiya**
 
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/your-profile)
-- GitHub: [Your GitHub](https://github.com/your-username)
-- Email: your.email@example.com
+- LinkedIn: [linkedin.com/in/rishikkumar84ya](https://www.linkedin.com/in/rishikkumar84ya/)
+- GitHub: [github.com/rishikkumar84a](https://github.com/rishikkumar84a)
+- Email: rishikkumarchaurasiya@gmail.com
 
 ---
 
@@ -477,7 +479,7 @@ This project is created for the PMA Bootcamp Technical Assessment.
 For questions or issues:
 1. Check existing GitHub issues
 2. Create a new issue with detailed description
-3. Contact: your.email@example.com
+3. Contact: rishikkumarchaurasiya@gmail.com
 
 ---
 

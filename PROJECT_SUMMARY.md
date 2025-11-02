@@ -166,11 +166,11 @@ weather-app/
 
 ## 🔑 API Keys Configured
 
-All API keys are pre-configured in the project:
+All API keys need to be configured in your `.env` file:
 
-1. **OpenWeatherMap**: `8cc42f1330fb03e5b46d090b5266673f`
-2. **Google Maps**: `AIzaSyDmWOLADTf9v6M6nKyCGAtN0BeAbfTxUO4`
-3. **YouTube**: `AIzaSyAMAZ2DZxdyPOu-steqOa_3r9PRB8nw0yY`
+1. **OpenWeatherMap**: `your_openweathermap_api_key_here`
+2. **Google Maps**: `your_google_maps_api_key_here`
+3. **YouTube**: `your_youtube_api_key_here`
 
 ---
 

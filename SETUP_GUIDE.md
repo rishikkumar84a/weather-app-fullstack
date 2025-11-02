@@ -49,20 +49,20 @@ cd ..
 
 **Backend (.env in root directory):**
 ```
-MONGODB_URI=mongodb://localhost:27017/weather-app
+DATABASE_URL=postgresql://username:password@localhost:5432/weather_app
 PORT=5001
 
-WEATHER_API_KEY=8cc42f1330fb03e5b46d090b5266673f
-GOOGLE_MAPS_API_KEY=AIzaSyDmWOLADTf9v6M6nKyCGAtN0BeAbfTxUO4
-YOUTUBE_API_KEY=AIzaSyAMAZ2DZxdyPOu-steqOa_3r9PRB8nw0yY
+WEATHER_API_KEY=your_openweathermap_api_key_here
+GOOGLE_MAPS_API_KEY=your_google_maps_api_key_here
+YOUTUBE_API_KEY=your_youtube_api_key_here
 ```
 
 **Frontend (.env.local in frontend directory):**
 ```
 NEXT_PUBLIC_API_URL=http://localhost:5001/api
-NEXT_PUBLIC_WEATHER_API_KEY=8cc42f1330fb03e5b46d090b5266673f
-NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=AIzaSyDmWOLADTf9v6M6nKyCGAtN0BeAbfTxUO4
-NEXT_PUBLIC_YOUTUBE_API_KEY=AIzaSyAMAZ2DZxdyPOu-steqOa_3r9PRB8nw0yY
+NEXT_PUBLIC_WEATHER_API_KEY=your_openweathermap_api_key_here
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_google_maps_api_key_here
+NEXT_PUBLIC_YOUTUBE_API_KEY=your_youtube_api_key_here
 ```
 
 ### 4. Start MongoDB
