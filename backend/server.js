@@ -16,6 +16,19 @@ app.use(express.urlencoded({ extended: true }));
 // Routes
 app.use('/api/weather', weatherRoutes);
 
+// Root route
+app.get('/', (req, res) => {
+  res.json({ 
+    message: 'Weather App API',
+    version: '1.0.0',
+    endpoints: {
+      health: '/health',
+      currentWeather: '/api/weather/current?city=London',
+      weatherRecords: '/api/weather/records'
+    }
+  });
+});
+
 // Health check
 app.get('/health', (req, res) => {
   res.json({ status: 'OK', message: 'Weather API is running' });
