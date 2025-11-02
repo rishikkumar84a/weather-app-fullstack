@@ -32,8 +32,8 @@ router.post('/records', async (req, res) => {
     // Fetch weather data
     const weatherData = await weatherService.getCompleteWeatherData(value.location);
 
-    // Create new record
-    const newRecord = new WeatherRecord({
+    // Create new record using PostgreSQL static method
+    const newRecord = await WeatherRecord.create({
       location: weatherData.location,
       weatherData: {
         current: weatherData.current,
@@ -46,7 +46,6 @@ router.post('/records', async (req, res) => {
       }
     });
 
-    await newRecord.save();
     res.status(201).json({ 
       message: 'Weather record created successfully',
       record: newRecord 
