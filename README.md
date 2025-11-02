@@ -489,7 +489,7 @@ For questions or issues:
 
 ## 🔗 Important Links
 
-- [PM Accelerator LinkedIn](https://www.linkedin.com/company/product-manager-accelerator/)
+- [PM Accelerator LinkedIn](https://www.linkedin.com/school/pmaccelerator/)
 - [OpenWeatherMap API Docs](https://openweathermap.org/api)
 - [Google Maps API Docs](https://developers.google.com/maps/documentation)
 - [YouTube API Docs](https://developers.google.com/youtube/v3)
