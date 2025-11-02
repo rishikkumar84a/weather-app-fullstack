@@ -24,9 +24,13 @@ export default function WeatherRecords({ refreshTrigger }: WeatherRecordsProps) 
   const fetchRecords = async () => {
     try {
       const response = await axios.get(`${API_URL}/weather/records`);
-      setRecords(response.data.records);
-    } catch (err) {
+      setRecords(response.data.records || []);
+    } catch (err: any) {
       console.error('Failed to fetch records:', err);
+      // If 404 or no records, just show empty state
+      if (err.response?.status === 404 || err.message.includes('404')) {
+        setRecords([]);
+      }
     } finally {
       setLoading(false);
     }
