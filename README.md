@@ -6,9 +6,13 @@
 
 **Built by: Rishik Kumar Chaurasiya**
 
+**Live App:** [https://weather-app-fullstack-seven.vercel.app/](https://weather-app-fullstack-seven.vercel.app/)
+
 ---
 
-## 📽️ Demo Video
+## 📽️ Demo Video & Live Link
+
+🌐 **[Live Application](https://weather-app-fullstack-seven.vercel.app/)**
 
 🎥 **[Watch Demo Video Here](https://your-demo-video-link.com)**
 
