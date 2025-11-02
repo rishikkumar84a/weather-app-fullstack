@@ -4,7 +4,7 @@
 > 
 > A comprehensive full-stack weather application with CRUD operations, real-time weather data, 5-day forecasts, and integrated Google Maps & YouTube APIs.
 
-**Built by: Your Name**
+**Built by: Rishik Kumar Chaurasiya**
 
 ---
 
@@ -451,7 +451,7 @@ This project is created for the PMA Bootcamp Technical Assessment.
 
 ## 👤 Author
 
-**Your Name**
+**Rishik Kumar Chaurasiya**
 
 - LinkedIn: [Your LinkedIn](https://linkedin.com/in/your-profile)
 - GitHub: [Your GitHub](https://github.com/your-username)

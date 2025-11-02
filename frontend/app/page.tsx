@@ -30,7 +30,7 @@ export default function Home() {
           ⛅ Weather App
         </h1>
         <p className="text-gray-600 text-lg">
-          Built by <span className="font-semibold text-indigo-600">Your Name</span> - PMA Bootcamp Technical Assessment
+          Built by <span className="font-semibold text-indigo-600">Rishik Kumar Chaurasiya</span> - PMA Bootcamp Technical Assessment
         </p>
         <div className="mt-4">
           <InfoButton />
