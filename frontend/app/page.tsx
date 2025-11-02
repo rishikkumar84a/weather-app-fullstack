@@ -30,7 +30,7 @@ export default function Home() {
           ⛅ Weather App
         </h1>
         <p className="text-gray-600 text-lg">
-          Built by <span className="font-semibold text-indigo-600">Rishik Kumar Chaurasiya</span> - PMA Bootcamp Technical Assessment
+          Built by <span className="font-semibold text-indigo-600">Rishik Kumar Chaurasiya</span> - PM Accelerator Bootcamp Technical Assessment
         </p>
         <div className="mt-4">
           <InfoButton />
@@ -78,7 +78,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="text-center text-gray-500 mt-12 pb-4">
-        <p>© 2025 Weather App | PMA Bootcamp AI Engineer Intern Technical Assessment</p>
+        <p>© 2025 Weather App | PM Accelerator Bootcamp AI Engineer Intern Technical Assessment</p>
       </footer>
     </main>
   );

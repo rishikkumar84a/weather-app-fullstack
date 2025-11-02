@@ -47,7 +47,7 @@ export default function InfoButton() {
                 
                 <div className="space-y-3">
                   <div>
-                    <h5 className="font-bold text-gray-700">🚀 PMA Pro</h5>
+                    <h5 className="font-bold text-gray-700">🚀 PM Accelerator Pro</h5>
                     <p className="text-gray-600 text-sm">
                       End-to-end product manager job hunting program that helps you master FAANG-level Product Management skills, 
                       conduct unlimited mock interviews, and gain job referrals through our largest alumni network. 25% of our offers 
@@ -65,7 +65,7 @@ export default function InfoButton() {
                   </div>
 
                   <div>
-                    <h5 className="font-bold text-gray-700">🚀 PMA Power Skills</h5>
+                    <h5 className="font-bold text-gray-700">🚀 PM Accelerator Power Skills</h5>
                     <p className="text-gray-600 text-sm">
                       Designed for existing product managers to sharpen their product management skills, leadership skills, and 
                       executive presentation skills.
@@ -73,7 +73,7 @@ export default function InfoButton() {
                   </div>
 
                   <div>
-                    <h5 className="font-bold text-gray-700">🚀 PMA Leader</h5>
+                    <h5 className="font-bold text-gray-700">🚀 PM Accelerator Leader</h5>
                     <p className="text-gray-600 text-sm">
                       We help you accelerate your product management career, get promoted to Director and product executive levels, 
                       and win in the board room.
