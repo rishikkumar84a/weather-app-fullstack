@@ -13,7 +13,17 @@ class WeatherService {
       if (location.type === 'city') {
         url = `${BASE_URL}/weather?q=${location.value}&appid=${WEATHER_API_KEY}&units=metric`;
       } else if (location.type === 'zip') {
-        url = `${BASE_URL}/weather?zip=${location.value}&appid=${WEATHER_API_KEY}&units=metric`;
+        // ZIP code format: zip,country_code
+        // If no country code provided, detect based on ZIP format:
+        // Indian PIN codes are 6 digits, US ZIP codes are 5 or 5+4 digits
+        let zipValue = location.value;
+        if (!zipValue.includes(',')) {
+          // Auto-detect country based on format
+          const isIndianPIN = /^\d{6}$/.test(zipValue);
+          const countryCode = isIndianPIN ? 'IN' : 'US';
+          zipValue = `${zipValue},${countryCode}`;
+        }
+        url = `${BASE_URL}/weather?zip=${zipValue}&appid=${WEATHER_API_KEY}&units=metric`;
       } else if (location.type === 'coordinates') {
         url = `${BASE_URL}/weather?lat=${location.lat}&lon=${location.lon}&appid=${WEATHER_API_KEY}&units=metric`;
       }
@@ -47,7 +57,17 @@ class WeatherService {
       if (location.type === 'city') {
         url = `${BASE_URL}/forecast?q=${location.value}&appid=${WEATHER_API_KEY}&units=metric`;
       } else if (location.type === 'zip') {
-        url = `${BASE_URL}/forecast?zip=${location.value}&appid=${WEATHER_API_KEY}&units=metric`;
+        // ZIP code format: zip,country_code
+        // If no country code provided, detect based on ZIP format:
+        // Indian PIN codes are 6 digits, US ZIP codes are 5 or 5+4 digits
+        let zipValue = location.value;
+        if (!zipValue.includes(',')) {
+          // Auto-detect country based on format
+          const isIndianPIN = /^\d{6}$/.test(zipValue);
+          const countryCode = isIndianPIN ? 'IN' : 'US';
+          zipValue = `${zipValue},${countryCode}`;
+        }
+        url = `${BASE_URL}/forecast?zip=${zipValue}&appid=${WEATHER_API_KEY}&units=metric`;
       } else if (location.type === 'coordinates') {
         url = `${BASE_URL}/forecast?lat=${location.lat}&lon=${location.lon}&appid=${WEATHER_API_KEY}&units=metric`;
       }
