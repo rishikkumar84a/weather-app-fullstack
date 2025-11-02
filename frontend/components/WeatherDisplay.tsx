@@ -126,7 +126,10 @@ export default function WeatherDisplay({ weatherData, location, onRecordSaved }:
 
         {/* Save Record Section */}
         <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-          <h3 className="font-bold text-gray-800 mb-3">Save This Weather Record</h3>
+          <h3 className="font-bold text-gray-800 mb-2">Save This Weather Record</h3>
+          <p className="text-sm text-gray-600 mb-3">
+            Select a date range within the next 5 days to save forecast data for those specific dates.
+          </p>
           <div className="flex gap-4 items-end">
             <div className="flex-1">
               <label className="block text-sm font-medium text-gray-700 mb-1">

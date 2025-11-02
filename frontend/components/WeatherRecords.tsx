@@ -176,6 +176,32 @@ export default function WeatherRecords({ refreshTrigger }: WeatherRecordsProps) 
                     </div>
                   </div>
 
+                  {/* Display Forecast Data for Date Range */}
+                  {record.weatherData.forecast && record.weatherData.forecast.length > 0 && (
+                    <div className="mt-4">
+                      <h4 className="text-sm font-semibold text-gray-700 mb-2">
+                        Forecast for Selected Date Range ({record.weatherData.forecast.length} days)
+                      </h4>
+                      <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
+                        {record.weatherData.forecast.map((day: any, index: number) => (
+                          <div key={index} className="bg-blue-50 p-2 rounded text-center">
+                            <div className="text-xs text-gray-600 mb-1">
+                              {new Date(day.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+                            </div>
+                            <img
+                              src={`https://openweathermap.org/img/wn/${day.icon}.png`}
+                              alt={day.description}
+                              className="w-10 h-10 mx-auto"
+                            />
+                            <div className="text-xs font-bold text-gray-800">
+                              {Math.round(day.temp.max)}° / {Math.round(day.temp.min)}°
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
                   {editingId === record._id ? (
                     <div className="mt-4 p-3 bg-gray-50 rounded">
                       <div className="flex gap-3 items-end">

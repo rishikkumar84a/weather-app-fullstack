@@ -29,8 +29,8 @@ router.post('/records', async (req, res) => {
       return res.status(400).json({ error: error.details[0].message });
     }
 
-    // Fetch weather data
-    const weatherData = await weatherService.getCompleteWeatherData(value.location);
+    // Fetch weather data with date range filtering
+    const weatherData = await weatherService.getCompleteWeatherData(value.location, value.dateRange);
 
     // Create new record using PostgreSQL static method
     const newRecord = await WeatherRecord.create({

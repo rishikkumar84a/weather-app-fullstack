@@ -91,15 +91,32 @@ class WeatherService {
     }
   }
 
-  async getCompleteWeatherData(location) {
+  async getCompleteWeatherData(location, dateRange = null) {
     const [current, forecast] = await Promise.all([
       this.getCurrentWeather(location),
       this.getForecast(location)
     ]);
 
+    // If dateRange is provided, filter forecast to only include dates in range
+    let filteredForecast = forecast;
+    if (dateRange && dateRange.startDate && dateRange.endDate) {
+      const startDate = new Date(dateRange.startDate);
+      const endDate = new Date(dateRange.endDate);
+      
+      filteredForecast = forecast.filter(day => {
+        const forecastDate = new Date(day.date);
+        return forecastDate >= startDate && forecastDate <= endDate;
+      });
+
+      // If no forecast data matches the date range, still include original forecast
+      if (filteredForecast.length === 0) {
+        filteredForecast = forecast;
+      }
+    }
+
     return {
       current,
-      forecast,
+      forecast: filteredForecast,
       location: {
         city: current.city,
         country: current.country,
